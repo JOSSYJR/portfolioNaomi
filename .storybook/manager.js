@@ -5,7 +5,7 @@ addons.setConfig({
   theme: {
     ...themes.dark,
     brandImage: './icon.svg',
-    brandTitle: 'Robel Ephrem Components',
+    brandTitle: 'Hamish Williams Components',
     brandUrl: 'https://hamishw.com',
   },
 });

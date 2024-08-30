@@ -1,20 +1,29 @@
-Robel's Portfolio website
+__  __  __
+\ \ \ \ \/
+ \ \/\ \
+  \/  \/
 
-DESIGNER | Robel Ephrem
+The humans.txt file explains the team, technology,
+and graphic assets behind this site humanstxt.org.
 
-Robel Ephrem
-Handcrafted design & web developed by Robel Ephrem. I am a developer based in Addis Ababa, Ethiopia. I am passionate about creating beautiful and functional websites and applications. I am currently working as a freelance developer. I am always looking for new opportunities to work on exciting projects. If you have a project you would like to discuss, feel free to contact me.
+_______________________________________________________________________________
+
+DESIGNER | デザイナー
+
+Hamish Williams
+Hand crafted design & web development
 
 Design tools:
 Figma
 Photoshop
 Blender
 
-twitter.com/Robeleph221
-github.com/robeleph22
+twitter.com/hamishmw
+github.com/hamishmw
 
 _______________________________________________________________________________
 
+TECHNOLOGY | テクノロジー
 
 React
 Remix
@@ -23,3 +32,8 @@ Framer Motion
 
 _______________________________________________________________________________
 
+FONTS | フォント
+
+Gotham
+IPA Gothic Regular
+Hiragino Kaku Gothic W8
