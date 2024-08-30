@@ -15,9 +15,8 @@ import { cssProps, msToNum, numToMs } from '~/utils/style';
 import { baseMeta } from '~/utils/meta';
 import { Form, useActionData, useNavigation } from '@remix-run/react';
 import { json } from '@remix-run/cloudflare';
-import emailjs from 'emailjs-com';
+import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
 import styles from './contact.module.css';
-import axios from 'axios';
 
 export const meta = () => {
   return baseMeta({
@@ -32,6 +31,14 @@ const MAX_MESSAGE_LENGTH = 4096;
 const EMAIL_PATTERN = /(.+)@(.+){2,}\.(.+){2,}/;
 
 export async function action({ context, request }) {
+  const ses = new SESClient({
+    region: 'us-east-1',
+    credentials: {
+      accessKeyId: context.cloudflare.env.AWS_ACCESS_KEY_ID,
+      secretAccessKey: context.cloudflare.env.AWS_SECRET_ACCESS_KEY,
+    },
+  });
+
   const formData = await request.formData();
   const isBot = String(formData.get('name'));
   const email = String(formData.get('email'));
@@ -62,32 +69,26 @@ export async function action({ context, request }) {
     return json({ errors });
   }
 
-  try {
-
-/*    // Send email via EmailJS
-    emailjs.init('pj6OfmglZMZDhIiEr'); // replace with your EmailJS user ID
-    const e = await emailjs.send('service_txkdi17', 'service_txkdi17', {
-      from_email: email,
-      message: message,
-    });*/
-
-    var data = {
-      service_id: 'service_txkdi17',
-      template_id: 'template_bngijgm',
-      user_id: 'pj6OfmglZMZDhIiEr',
-      template_params: {
-        'from_name': email,
-        'message': message
-      }
-    };
-
-    let e = await axios.post('https://api.emailjs.com/api/v1.0/email/send', data);
-    console.log('SUCCESS!', e.status, e.data);
-  }
-  catch (e) {
-    console.log('FAILED...', e);
-  }
-
+  // Send email via Amazon SES
+  await ses.send(
+    new SendEmailCommand({
+      Destination: {
+        ToAddresses: [context.cloudflare.env.EMAIL],
+      },
+      Message: {
+        Body: {
+          Text: {
+            Data: `From: ${email}\n\n${message}`,
+          },
+        },
+        Subject: {
+          Data: `Portfolio message from ${email}`,
+        },
+      },
+      Source: `Portfolio <${context.cloudflare.env.FROM_EMAIL}>`,
+      ReplyToAddresses: [email],
+    })
+  );
 
   return json({ success: true });
 }
@@ -234,6 +235,7 @@ export const Contact = () => {
     </Section>
   );
 };
+
 function getDelay(delayMs, offset = numToMs(0), multiplier = 1) {
   const numDelay = msToNum(delayMs) * multiplier;
   return cssProps({ delay: numToMs((msToNum(offset) + numDelay).toFixed(0)) });

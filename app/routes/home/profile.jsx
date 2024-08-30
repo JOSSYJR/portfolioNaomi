@@ -1,6 +1,6 @@
-import profileImgLarge from 'app/assets/Robel-Profile.jpg';
-import profileImgPlaceholder from 'app/assets/Robel-Profile.jpg';
-import profileImg from '~/assets/Robel-Profile.jpg';
+import profileImgLarge from '~/assets/profile-large.jpg';
+import profileImgPlaceholder from '~/assets/profile-placeholder.jpg';
+import profileImg from '~/assets/profile.jpg';
 import { Button } from '~/components/button';
 import { DecoderText } from '~/components/decoder-text';
 import { Divider } from '~/components/divider';
@@ -21,16 +21,17 @@ const ProfileText = ({ visible, titleId }) => (
       <DecoderText text="Hi there" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-
-      I'm Robel Ephrem, a passionate software developer with 3 years of
-      experience. Specializing in Flutter, React, Node.js, .Net , Firebase, TypeScript, MySQL and others. I thrive
-      on crafting efficient solutions to real-world problems. I'm committed to
-      staying updated with the latest trends and constantly improving my craft
-      through learning and experimentation. I excel in diverse teams, fostering
-      open communication and embracing different perspectives to achieve
-      extraordinary results.
+      I’m Hamish, currently I live in Sydney working as a senior product designer at{' '}
+      <Link href="https://www.qwilr.com">Qwilr</Link>. My projects include UX design, UI
+      animations, and icon illustration. Being comfortable with code allows me to rapidly
+      prototype and validate experiences. If you’re interested in the tools and software I
+      use check out my <Link href="/uses">uses page</Link>.
     </Text>
-
+    <Text className={styles.description} data-visible={visible} size="l" as="p">
+      In my spare time I like to practice Brazilian Jiu Jitsu, play video games, and{' '}
+      <Link href="/projects/volkihar-knight">make mods</Link>. I’m always down for hearing
+      about new projects, so feel free to drop me a line.
+    </Text>
   </Fragment>
 );
 
@@ -73,7 +74,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
                   collapseDelay={1000}
                 />
                 <div className={styles.tagText} data-visible={visible}>
-                   About me
+                  About me
                 </div>
               </div>
               <div className={styles.image}>

@@ -38,7 +38,7 @@ import {
 import { Fragment, Suspense, lazy } from 'react';
 import { media } from '~/utils/style';
 import { baseMeta } from '~/utils/meta';
-import VolkiharLogo from 'app/assets/R-logo.png';
+import { VolkiharLogo } from './volkihar-logo';
 import styles from './volkihar-knight.module.css';
 
 const Carousel = lazy(() =>
