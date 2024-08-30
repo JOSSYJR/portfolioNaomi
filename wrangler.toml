@@ -2,4 +2,7 @@ kv_namespaces = [
   { id = "MY_KV", binding="MY_KV" }
 ]
 [build]
-pages_build_output_dir = "./build/client"
+command = "npm run build"
+pages_build_output_dir = "./build/client"  # Static assets
+functions = "./build/server"  # Server-side code
+

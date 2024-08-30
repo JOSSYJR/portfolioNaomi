@@ -1,0 +1,1 @@
+const e="Robel Ephrem",t="Software developer",i=["Flutter","React","Node.js",".Net","Figma","TypeScript","MySQL","Tailwind","Firebase","git"],o="https://hamishw.com",s="@Robeleph221",n="robeleph22",c="robel-ephrem-1a4574272",r="ሮቤል Portfolio",l={name:e,role:t,disciplines:i,url:o,twitter:s,github:n,linkedin:c,ascii:r};export{l as c};
