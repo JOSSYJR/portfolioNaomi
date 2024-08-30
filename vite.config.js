@@ -10,7 +10,6 @@ import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
 import rehypeImgSize from 'rehype-img-size';
 import rehypeSlug from 'rehype-slug';
 import rehypePrism from '@mapbox/rehype-prism';
-import { vercelPreset } from '@vercel/remix/vite';
 
 const isStorybook = process.argv[1]?.includes('storybook');
 
@@ -18,13 +17,6 @@ export default defineConfig({
   assetsInclude: ['**/*.glb', '**/*.hdr', '**/*.glsl'],
   build: {
     assetsInlineLimit: 1024,
-  },
-  resolve: {
-    alias: [
-      { find: '@assets', replacement: '/app/assets' },
-      { find: '@components', replacement: '/app/components' },
-      // { find: '@pages', replacement: '/src/pages' },
-    ],
   },
   server: {
     port: 7777,
@@ -37,7 +29,6 @@ export default defineConfig({
     }),
     remixCloudflareDevProxy(),
     remix({
-      presets: [vercelPreset()],
       routes(defineRoutes) {
         return defineRoutes(route => {
           route('/', 'routes/home/route.js', { index: true });
