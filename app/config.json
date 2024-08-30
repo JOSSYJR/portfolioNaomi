@@ -1,11 +1,12 @@
 {
-  "name": "Hamish Williams",
-  "role": "Designer",
-  "disciplines": ["Developer", "Prototyper", "Animator", "Illustrator", "Modder"],
+  "name": "Robel Ephrem",
+  "role": "Software developer",
+  "disciplines": ["Flutter", "React","Node.js",".Net","Figma","TypeScript","MySQL","Tailwind","Firebase","git"],
   "url": "https://hamishw.com",
-  "twitter": "@hamishMW",
-  "figma": "@Hamish",
-  "github": "HamishMW",
-  "repo": "https://github.com/HamishMW/portfolio",
-  "ascii": "__  __  __\n\u005C \u005C \u005C \u005C \u005C\u2215\n \u005C \u005C\u2215\u005C \u005C\n  \u005C\u2215  \u005C\u2215\n"
+  "twitter": "@Robeleph221",
+  "github": "robeleph22",
+  "linkedin": "robel-ephrem-1a4574272",
+
+  "ascii": "\u122E\u1264\u120D \u0050\u006F\u0072\u0074\u0066\u006F\u006C\u0069\u006F"
+
 }

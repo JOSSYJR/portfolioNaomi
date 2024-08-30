@@ -1,15 +1,15 @@
-import gamestackTexture2Large from '~/assets/gamestack-list-large.jpg';
-import gamestackTexture2Placeholder from '~/assets/gamestack-list-placeholder.jpg';
-import gamestackTexture2 from '~/assets/gamestack-list.jpg';
-import gamestackTextureLarge from '~/assets/gamestack-login-large.jpg';
-import gamestackTexturePlaceholder from '~/assets/gamestack-login-placeholder.jpg';
-import gamestackTexture from '~/assets/gamestack-login.jpg';
-import sliceTextureLarge from '~/assets/slice-app-large.jpg';
-import sliceTexturePlaceholder from '~/assets/slice-app-placeholder.jpg';
-import sliceTexture from '~/assets/slice-app.jpg';
-import sprTextureLarge from '~/assets/spr-lesson-builder-dark-large.jpg';
-import sprTexturePlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.jpg';
-import sprTexture from '~/assets/spr-lesson-builder-dark.jpg';
+import gamestackTexture2Large from 'app/assets/Eat-Addis-Food-Delivery-Addis-list.jpg';
+import gamestackTexture2Placeholder from 'app/assets/Eat-Addis-Food-Delivery-Addis-list.jpg';
+import gamestackTexture2 from 'app/assets/Eat-Addis-Food-Delivery-Addis-list.jpg';
+import gamestackTextureLarge from 'app/assets/Eat-Addis-Food-Delivery-Addis-welcome-page.jpg';
+import gamestackTexturePlaceholder from 'app/assets/Eat-Addis-Food-Delivery-Addis-welcome-page.jpg';
+import gamestackTexture from 'app/assets/Eat-Addis-Food-Delivery-Addis-welcome-page.jpg';
+import sliceTextureLarge from 'app/assets/Semah-MCH-Center.png';
+import sliceTexturePlaceholder from 'app/assets/Semah-MCH-Center.png';
+import sliceTexture from 'app/assets/Semah-MCH-Center.png';
+import sprTextureLarge from 'app/assets/ahunShoping.png';
+import sprTexturePlaceholder from 'app/assets/ahunShoping.png';
+import sprTexture from 'app/assets/ahunShoping.png';
 import { Footer } from '~/components/footer';
 import { baseMeta } from '~/utils/meta';
 import { Intro } from './intro';
@@ -41,7 +41,7 @@ export const links = () => {
 
 export const meta = () => {
   return baseMeta({
-    title: 'Designer + Developer',
+    title: '',
     description: `Design portfolio of ${config.name} — a product designer working on web & mobile apps with a focus on motion, experience design, and accessibility.`,
   });
 };
@@ -103,10 +103,12 @@ export const Home = () => {
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
         index={1}
-        title="Designing the future of education"
-        description="Designing a platform to help educators build better online courseware"
+        title="Ahun Shopping"
+        description="Experience seamless shopping across devices with our
+        versatile e-commerce platform. Whether you're on our mobile app or at your
+        desktop, discover trending products, secure purchases, and enjoy a personalized shopping experience anytime, anywhere."
         buttonText="View project"
-        buttonLink="/projects/smart-sparrow"
+        buttonLink="https://ethiobestprice.com/"
         model={{
           type: 'laptop',
           alt: 'Smart Sparrow lesson builder',
@@ -124,10 +126,10 @@ export const Home = () => {
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
-        title="Video game progress tracking"
-        description="Design and development for a video game tracking app built in React Native"
-        buttonText="View website"
-        buttonLink="https://gamestack.hamishw.com"
+        title="eat ADDIS delivery app"
+        description="Design and development for a delivery app built in Flutter"
+        buttonText="Try the app"
+        buttonLink="https://play.google.com/store/apps/details?id=com.eataddis.customer&hl=en&gl=US"
         model={{
           type: 'phone',
           alt: 'App login screen',
@@ -148,10 +150,10 @@ export const Home = () => {
         sectionRef={projectThree}
         visible={visibleSections.includes(projectThree.current)}
         index={3}
-        title="Biomedical image collaboration"
-        description="Increasing the amount of collaboration in Slice, an app for biomedical imaging"
+        title="SEMAH MCH center"
+        description="Design and development for a user friendly website that allows patients to book appointments and get information about the center"
         buttonText="View project"
-        buttonLink="/projects/slice"
+        buttonLink="https://www.semahmch.com/"
         model={{
           type: 'laptop',
           alt: 'Annotating a biomedical image in the Slice app',
